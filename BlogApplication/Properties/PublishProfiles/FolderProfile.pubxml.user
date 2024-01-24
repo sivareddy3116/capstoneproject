@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Capstone\BlogWebApp\BlogApplication\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>False|2024-01-24T09:46:18.7254343Z;False|2024-01-24T15:14:18.0863835+05:30;False|2024-01-24T15:11:07.1547341+05:30;False|2024-01-24T14:33:13.9462133+05:30;False|2024-01-24T14:17:19.0759787+05:30;False|2024-01-24T14:15:12.7598544+05:30;False|2024-01-24T14:08:45.9860924+05:30;False|2024-01-24T14:07:41.4030352+05:30;False|2024-01-24T14:04:59.7734410+05:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

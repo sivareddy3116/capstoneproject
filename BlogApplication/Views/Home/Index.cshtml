@@ -1,0 +1,27 @@
+﻿@model List<BlogWebApp.Models.BlogInfo>
+
+
+
+<h2>All Blogs</h2>
+
+<div class="row">
+    @foreach (var blog in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@blog.Title</h5>
+                    <p class="card-text">
+                        <strong>Subject:</strong> @blog.Subject<br />
+                        <strong>Blog URL:</strong> @blog.BlogUrl<br />
+                        <strong>Date of Creation:</strong> @blog.DateOfCreation
+                        <!-- Add more details if needed -->
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <!-- Add buttons or additional content in the card footer if needed -->
+                </div>
+            </div>
+        </div>
+    }
+</div>

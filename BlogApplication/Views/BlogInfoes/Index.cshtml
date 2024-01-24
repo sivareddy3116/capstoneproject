@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BlogWebApp.Models.BlogInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Blog List</h1>
+<div class="text-right mb-3">
+    <form asp-controller="EmpInfoes" asp-action="Login" method="post">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</div>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+@foreach (var item in Model)
+{
+    <div class="card mb-3">
+        <div class="card-header">
+            @Html.DisplayFor(modelItem => item.Title)
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Subject)</h5>
+            <p class="card-text">
+                <strong>Date of Creation:</strong> @Html.DisplayFor(modelItem => item.DateOfCreation)<br />
+                <strong>Blog URL:</strong> @Html.DisplayFor(modelItem => item.BlogUrl)<br />
+                <strong>Employee Email ID:</strong> @Html.DisplayFor(modelItem => item.EmpEmailId)
+            </p>
+            <a asp-action="Details" asp-route-id="@item.BlogId" class="btn btn-info">Details</a>
+            <a asp-action="Edit" asp-route-id="@item.BlogId" class="btn btn-primary">Edit</a>
+            <a asp-action="Delete" asp-route-id="@item.BlogId" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+}

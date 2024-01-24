@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BlogWebApp.Models.AdminInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <form asp-action="Create" method="post" style="display: inline;">
+        <button type="submit">Create New</button>
+    </form>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    <form asp-action="Edit" asp-route-id="@item.EmailId" method="post" style="display: inline;">
+                        <button type="submit">Edit</button>
+                    </form>
+
+                    <form asp-action="Details" asp-route-id="@item.EmailId" method="post" style="display: inline;">
+                        <button type="submit">Details</button>
+                    </form>
+
+                    <form asp-action="Delete" asp-route-id="@item.EmailId" method="post" style="display: inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

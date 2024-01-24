@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BlogWebApp.Models.EmpInfo>
+
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    tbody {
+        background-color: #e0e0e0; /* Set the background color for the entire table body */
+    }
+</style>
+
+<h1>Employee List</h1>
+<div class="text-right mb-3">
+    <form asp-controller="AdminInfoes" asp-action="Login" method="post">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</div>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfJoining)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassCode)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfJoining)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PassCode)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmailId" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.EmailId" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.EmailId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
